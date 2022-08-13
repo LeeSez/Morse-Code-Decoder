@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="LeeSeznayove">
+        <title>Morse Encoder</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body onload="init()">
+        <div id="first"><div id="second"><div id="third"><h1>Morse Decoder</h1></div></div></div>
+        <p id="code">Welcome To Morse Decoder!</p>
+        <p id="decode"></p>
+        <div id="buttons">
+            <div class="dd">
+                <button id="dash" onclick="add('-')">Dash</button>
+                <button id="dot" onclick="add('.')">Dot</button>
+            </div>
+            <div class="dd">
+                <button id="space" onclick="add('s')">Space</button>
+                <button id="del" onclick="del()">Del</button>
+            </div>
+        </div>
+        <div id="redo" class="round" onclick="redo()"><img id="redoImg" src="images/redo.png" width="27px" height="30px"/></div>
+        <div id="readAloud" class="round" onclick="initiatRead()"><img id="readAloudImg" src="images/readAloud.png" width="27px" height="30px"/></div>
+
+        <div id="outterRange">
+            <img src="images/fast.png" width="25px" height="25px"/>
+            <input type="range" id="speedRange" min="300" max="600" onchange="changeSpeed(this)"> 
+            <img src="images/slow.png" width="27px" height="20px"/>
+        </div>
+
+        <div id="settingsMenu">
+            <h2>Settings Menu</h2>
+            <ul id="blackList">
+                <li>Sound <button onclick="musicOff()" id="backgroundMusicCtl" class="whiteBtn">On</button></li>
+            </ul>
+            <button id="exit" onclick="showSettings()">X</button>
+        </div>
+        
+        <div id="settings" class="round" onclick="showSettings()"><img src="images/settings.png" width="25px" height="25px"/></div>
+        <div id="help" class="round">?</div>
+        <div id="manual">
+            <ul>
+                <li>a .-</li>
+                <li>b -...</li>
+                <li>c -.-.</li>
+                <li>d -..</li>
+                <li>e .</li>
+                <li>f ..-.</li>
+                <li>g --.</li>
+                <li>h ....</li>
+                <li>i ..</li>
+                <li>j .---</li>
+                <li>k -.-</li>
+                <li>l .-..</li>
+                <li>m --</li>
+                <li>n -.</li>
+                <li>o ---</li>
+                <li>p .--.</li>
+                <li>q --.-</li>
+                <li>r .-.</li>
+                <li>s ...</li>
+                <li>t -</li>
+                <li>u ..-</li>
+                <li>v ...-</li>
+                <li>w .--</li>
+                <li>x -..-</li>
+                <li>y -.--</li>
+                <li>z --..</li>
+                
+            </ul>
+            <ul id="blackList">
+                <li>, --..--</li>
+                <li>. .-.-.-</li>
+                <li>? ..--..</li>
+                <li>! -.-.--</li>
+                <br>
+                <li>0 -----</li>
+                <li>1 .----</li>
+                <li>2 ..---</li>
+                <li>3 ...--</li>
+                <li>4 ....-</li>
+                <li>5 .....</li>
+                <li>6 -....</li>
+                <li>7 --...</li>
+                <li>8 ---..</li>
+                <li>9 ----.</li>
+            </ul>
+        </div>
+    </body>
+</html>
